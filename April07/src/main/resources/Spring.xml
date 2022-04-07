@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.w3.org/2001/XMLSchema"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="m1" class="com.bean.Movie">
+        <constructor-arg name="mId" value="1"/>
+        <constructor-arg name="mName" value="Ram Leela"/>
+    </bean>
+    <bean id="m2" class="com.bean.Movie" >
+        <constructor-arg name="mId" value="2"/>
+        <constructor-arg name="mName" value="Bajirao Mastani"/>
+    </bean>
+    <bean id="d" class="com.bean.Director">
+        <property name="dId" value="1"/>
+        <property name="dName" value="Sanjay Leela Bhansali"/>
+        <property name="movies">
+            <set>
+                <ref bean="m1"/>
+                <ref bean="m2"/>
+            </set>
+        </property>
+
+    </bean>
+
+</beans>
